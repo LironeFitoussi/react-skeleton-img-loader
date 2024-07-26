@@ -1,4 +1,4 @@
-# useLazyImage by Lirone Fitoussi
+# react-skeleton-img-loader by Lirone Fitoussi
 
 A React hook for lazy loading images with an integrated Material-UI skeleton loader.
 
@@ -11,11 +11,12 @@ A React hook for lazy loading images with an integrated Material-UI skeleton loa
 - [TypeScript Support](#typescript-support)
 - [Contributing](#contributing)
 - [License](#license)
+- [Changelog](#changelog)
 
 ## Installation
 
 ```bash
-npm install use-lazy-image @mui/material
+npm install react-skeleton-img-loader @mui/material
 ```
 
 Ensure you have the peer dependencies installed:
@@ -28,7 +29,7 @@ npm install react @mui/material @emotion/react @emotion/styled
 
 ```jsx
 import React from 'react';
-import useLazyImage from 'use-lazy-image';
+import useLazyImage from 'react-skeleton-img-loader';
 
 const MyComponent = () => {
   const lazyImage = useLazyImage('https://example.com/image.jpg', {
@@ -105,7 +106,7 @@ The `useLazyImage` hook includes TypeScript definitions. Here's an example of ho
 
 ```typescript
 import React from 'react';
-import useLazyImage from 'use-lazy-image';
+import useLazyImage from 'react-skeleton-img-loader';
 
 interface MyComponentProps {
   imageSrc: string;
@@ -143,22 +144,19 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-## 5. Additional Documentation
-
-
-```markdown
-# Changelog
+## Changelog
 
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.0] - 2023-07-26
+### [1.0.0] - 2023-07-26
 
-### Added
+#### Added
 - Initial release of useLazyImage hook
 - Lazy loading functionality for images
 - Skeleton loader using Material-UI
 - TypeScript support
 - Basic documentation and examples
+
