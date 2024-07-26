@@ -1,6 +1,6 @@
 {
   "name": "@lironefitoussi/react-skeleton-img-loader",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A React hook for lazy loading images with MUI Skeleton integration",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -15,7 +15,8 @@
   },
   "peerDependencies": {
     "@mui/material": "^5.0.0",
-    "react": "^17.0.0 || ^18.0.0"
+    "react": "^17.0.0 || ^18.0.0",
+    "@emotion/styled": "^11.7.1"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^26.0.1",
