@@ -50,12 +50,14 @@ var useLazyImage = function (src, _a) {
     var width = _a.width, height = _a.height, _b = _a.alt, alt = _b === void 0 ? '' : _b, imgProps = __rest(_a, ["width", "height", "alt"]);
     var _c = useState(false), loaded = _c[0], setLoaded = _c[1];
     var _d = useState(false), error = _d[0], setError = _d[1];
+    var handleImageLoad = useCallback(function () { return setLoaded(true); }, []);
+    var handleImageError = useCallback(function () { return setError(true); }, []);
     var imageRef = useCallback(function (node) {
         if (node) {
-            node.onload = function () { return setLoaded(true); };
-            node.onerror = function () { return setError(true); };
+            node.addEventListener('load', handleImageLoad);
+            node.addEventListener('error', handleImageError);
         }
-    }, []);
+    }, [handleImageLoad, handleImageError]);
     useEffect(function () {
         setLoaded(false);
         setError(false);
@@ -64,7 +66,7 @@ var useLazyImage = function (src, _a) {
         return React.createElement("div", null, "Error loading image");
     }
     return (React.createElement("div", { style: { position: 'relative', width: width, height: height } },
-        !loaded && React.createElement(Skeleton, { variant: "rectangular", width: width, height: height, className: "MuiSkeleton-root" }),
+        !loaded && React.createElement(Skeleton, { variant: "rectangular", width: width, height: height }),
         React.createElement("img", __assign({ ref: imageRef, src: src, alt: alt, width: width, height: height }, imgProps, { style: __assign({ display: loaded ? 'block' : 'none' }, imgProps.style) }))));
 };
 

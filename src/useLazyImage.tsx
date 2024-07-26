@@ -10,12 +10,15 @@ const useLazyImage = (src: string, { width, height, alt = '', ...imgProps }: Use
   const [loaded, setLoaded] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
 
+  const handleImageLoad = useCallback(() => setLoaded(true), []);
+  const handleImageError = useCallback(() => setError(true), []);
+
   const imageRef = useCallback((node: HTMLImageElement | null) => {
     if (node) {
-      node.onload = () => setLoaded(true);
-      node.onerror = () => setError(true);
+      node.addEventListener('load', handleImageLoad);
+      node.addEventListener('error', handleImageError);
     }
-  }, []);
+  }, [handleImageLoad, handleImageError]);
 
   useEffect(() => {
     setLoaded(false);
@@ -28,7 +31,7 @@ const useLazyImage = (src: string, { width, height, alt = '', ...imgProps }: Use
 
   return (
     <div style={{ position: 'relative', width, height }}>
-      {!loaded && <Skeleton variant="rectangular" width={width} height={height} className="MuiSkeleton-root" />}
+      {!loaded && <Skeleton variant="rectangular" width={width} height={height} />}
       <img
         ref={imageRef}
         src={src}
