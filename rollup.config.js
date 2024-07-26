@@ -1,10 +1,10 @@
 const typescript = require('@rollup/plugin-typescript');
 const commonjs = require('@rollup/plugin-commonjs');
-const resolve = require('@rollup/plugin-node-resolve');
+const resolve = require('@rollup/plugin-node-resolve').default;
 const peerDepsExternal = require('rollup-plugin-peer-deps-external');
 
 module.exports = {
-  input: 'src/index.ts',
+  input: 'src/useLazyImage.tsx',  // Update this line
   output: [
     {
       file: 'dist/index.js',
