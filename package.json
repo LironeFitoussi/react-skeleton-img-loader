@@ -1,0 +1,39 @@
+{
+  "name": "@yourusername/react-skeleton-img-loader",
+  "version": "0.1.0",
+  "description": "A React hook for lazy loading images with MUI Skeleton integration",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "test": "jest",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": ["react", "hook", "lazy-loading", "image", "mui", "skeleton"],
+  "author": "Your Name",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0",
+    "@mui/material": "^5.0.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@types/jest": "^29.5.0",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
+    "ts-jest": "^29.1.0",
+    "typescript": "^4.9.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lironefitoussi/react-skeleton-img-loader.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lironefitoussi/react-skeleton-img-loader/issues"
+  },
+  "homepage": "https://github.com/lironefitoussi/react-skeleton-img-loader#readme"
+}
